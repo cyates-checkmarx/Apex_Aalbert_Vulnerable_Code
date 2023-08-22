@@ -15,4 +15,9 @@ jobs:
           project_name: ${{ github.repository }}
           cx_tenant: cx-se-yates-prod
           base_uri: https://us.ast.checkmarx.net/
-          additional_params: --apikey ${{ secrets.CX_APIKEY_PROD }} --debug
+          additional_params: --apikey ${{ secrets.CX_APIKEY_PROD }} --debug --report-format sarif --output-path .
+        - name: Upload SARIF file
+          uses: github/codeql-action/upload-sarif@v2
+          with:
+            # Path to SARIF file relative to the root of the repository
+            sarif_file: cx_result.sarif
