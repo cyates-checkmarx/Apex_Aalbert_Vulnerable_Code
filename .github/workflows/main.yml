@@ -15,10 +15,10 @@ jobs:
           project_name: ${{ github.repository }}
           cx_tenant: cx-se-yates-prod
           base_uri: https://us.ast.checkmarx.net/
-          # cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-          # cx_client_secret: ${{ secrets.CX_SECRET }}
-          additional_params: --apikey ${{ secrets.CX_APIKEY_PROD }} --report-format sarif --output-path .
-          # additional_params:  --debug --report-format sarif --output-path .
+          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+          # additional_params: --apikey ${{ secrets.CX_APIKEY_PROD }} --report-format sarif --output-path .
+          additional_params: --report-format sarif --output-path .
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
