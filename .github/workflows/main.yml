@@ -25,9 +25,6 @@ jobs:
 
       - name: Run Checkmarx AST CLI Scan
         run: |
-          # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          # /home/linuxbrew/.linuxbrew/bin/brew install checkmarx/ast-cli/ast-cli
-          # /home/linuxbrew/.linuxbrew/Cellar/ast-cli/*/bin/cx \
             scan create \
             -s . \
             --agent GitHub \
