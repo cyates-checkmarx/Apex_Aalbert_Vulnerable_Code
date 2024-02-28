@@ -37,8 +37,9 @@ jobs:
             --tenant ${{ secrets.CX_TENANT }} \
             --client-id ${{ secrets.CX_CLIENT_ID }} \
             --client-secret ${{ secrets.CX_CLIENT_SECRET }} \
-            --report-format sarif
-            --sca-resolver ./ScaResolver
+            --sca-resolver ./ScaResolver \
+            --report-format sarif \
+            --output-format .
             
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
