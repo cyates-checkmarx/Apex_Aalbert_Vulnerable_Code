@@ -38,7 +38,6 @@ jobs:
             --client-id ${{ secrets.CX_CLIENT_ID }} \
             --client-secret ${{ secrets.CX_CLIENT_SECRET }} \
             --report-format sarif
-            --output-path .
             --sca-resolver ./ScaResolver
             
       - name: Upload SARIF file
