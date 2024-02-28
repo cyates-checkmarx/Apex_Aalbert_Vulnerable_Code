@@ -38,8 +38,7 @@ jobs:
             --client-id ${{ secrets.CX_CLIENT_ID }} \
             --client-secret ${{ secrets.CX_CLIENT_SECRET }} \
             --sca-resolver ./ScaResolver
-            --report-format sarif 
-            --output-path .
+            --additional_params
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
